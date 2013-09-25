@@ -4,6 +4,9 @@
 	<artifactId>vizkit</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<name>Vizkit</name>
+	<description>Data visualisation toolkit for Clojure</description>
+
 	<parent>
 		<artifactId>nuroko-pom</artifactId>
 		<groupId>com.nuroko</groupId>
