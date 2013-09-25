@@ -51,5 +51,10 @@
 			<artifactId>core.async</artifactId>
 			<version>0.1.222.0-83d0c2-alpha</version>
 		</dependency>
+		<dependency>
+			<groupId>net.mikera</groupId>
+			<artifactId>vectorz-clj</artifactId>
+			<version>0.14.0</version>
+		</dependency>
 	</dependencies>
 </project>
