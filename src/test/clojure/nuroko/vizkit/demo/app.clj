@@ -21,7 +21,7 @@
     (.setFont b font)
     b))
 
-(defn nav-panel []
+(defn nav-panel ^JPanel []
   (let [^MigLayout miglayout (MigLayout. "insets 20, gap 20, wrap 1, fillx" "[100%]" "")
         ^JPanel p (JPanel. miglayout)
         b1 (button "Hello World")
