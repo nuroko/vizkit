@@ -6,9 +6,11 @@
   (:import [javax.swing SwingUtilities JComponent JLabel JPanel]))
 
 (defmacro invoke-later [& body]
-  `(let [prom# (promise)]
-     (SwingUtilities/invokeLater (fn [] (deliver prom# ~@body)))
-     @prom#))
+  `(if (SwingUtilities/isEventDispatchThread)
+     (do ~@body)
+     (let [prom# (promise)]
+       (SwingUtilities/invokeLater (fn [] (deliver prom# (do ~@body))))
+      @prom#)))
 
 (defn label 
   "Creates a JLabel with the given content"
