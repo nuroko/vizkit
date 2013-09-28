@@ -2,7 +2,13 @@
   (:use [mikera.cljutils error])
   (:import [mikera.gui Frames JIcon])
   (:import [java.awt.image BufferedImage])
+  (:import [org.jfree.chart ChartPanel JFreeChart])
   (:import [javax.swing SwingUtilities JComponent JLabel JPanel]))
+
+(defmacro invoke-later [& body]
+  `(let [prom# (promise)]
+     (SwingUtilities/invokeLater (fn [] (deliver prom# ~@body)))
+     @prom#))
 
 (defn label 
   "Creates a JLabel with the given content"
@@ -17,6 +23,7 @@
   (^JComponent [x]
     (cond 
       (instance? JComponent x) x
+	    (instance? JFreeChart x) (ChartPanel. ^JFreeChart x)
       (instance? BufferedImage x) (JIcon. ^BufferedImage x)
       :else (label (str x)))))
 
@@ -26,8 +33,6 @@
     & {:keys [^String title]
        :as options
        :or {title nil}}]
-  (let [com (component com)]
-    (Frames/display com (str title)))))
-
-(defmacro invoke-later [& body]
-  `(SwingUtilities/invokeLater (fn [] ~@body)))
+  (invoke-later
+    (let [com (component com)]
+      (Frames/display com (str title))))))
