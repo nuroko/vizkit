@@ -10,7 +10,7 @@
      (do ~@body)
      (let [prom# (promise)]
        (SwingUtilities/invokeLater (fn [] (deliver prom# (do ~@body))))
-      @prom#)))
+       @prom#)))
 
 (defn label 
   "Creates a JLabel with the given content"
