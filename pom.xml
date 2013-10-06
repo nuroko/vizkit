@@ -70,6 +70,11 @@
 			<artifactId>jfreechart</artifactId>
 			<version>1.0.13-no-gnujaxp</version>
 		</dependency>
+		<dependency>
+			<groupId>net.mikera</groupId>
+			<artifactId>core.matrix</artifactId>
+			<version>0.11.0</version>
+		</dependency>
 	</dependencies>
 
 	<url>https://github.com/nuroko/${project.artifactId}.git</url>
