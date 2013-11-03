@@ -48,12 +48,12 @@
 		<dependency>
 			<groupId>org.clojure</groupId>
 			<artifactId>core.async</artifactId>
-			<version>0.1.222.0-83d0c2-alpha</version>
+			<version>0.1.242.0-44b1e3-alpha</version>
 		</dependency>
 		<dependency>
 			<groupId>net.mikera</groupId>
 			<artifactId>vectorz-clj</artifactId>
-			<version>0.15.0</version>
+			<version>0.16.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.insubstantial</groupId>
@@ -73,7 +73,7 @@
 		<dependency>
 			<groupId>net.mikera</groupId>
 			<artifactId>core.matrix</artifactId>
-			<version>0.13.1</version>
+			<version>0.14.0</version>
 		</dependency>
 	</dependencies>
 
